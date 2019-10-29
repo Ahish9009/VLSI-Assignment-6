@@ -1,0 +1,2 @@
+verilog work "radix2fft.v"
+verilog work "radix2ffttb.v"

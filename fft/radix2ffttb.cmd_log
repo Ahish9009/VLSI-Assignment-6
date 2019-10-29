@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/ahish/Desktop/Assignment-6/fft/radix2ffttb.xst" -ofn "/home/ahish/Desktop/Assignment-6/fft/radix2ffttb.syr" 

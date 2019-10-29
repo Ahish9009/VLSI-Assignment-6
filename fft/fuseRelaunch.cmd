@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/ahish/Desktop/Assignment-6/fft/radix2ffttb_isim_beh.exe" -prj "/home/ahish/Desktop/Assignment-6/fft/radix2ffttb_beh.prj" "work.radix2ffttb" "work.glbl" 
