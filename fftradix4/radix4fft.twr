@@ -1,0 +1,99 @@
+--------------------------------------------------------------------------------
+Release 13.4 Trace  (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/13.4/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml radix4fft.twx radix4fft.ncd -o radix4fft.twr radix4fft.pcf
+
+Design file:              radix4fft.ncd
+Physical constraint file: radix4fft.pcf
+Device,package,speed:     xc3s500e,fg320,-5 (PRODUCTION 1.27 2012-01-07)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+x<0>           |yReal<0>       |    5.992|
+x<0>           |yReal<1>       |    5.779|
+x<0>           |yReal<2>       |    6.271|
+x<0>           |yReal<3>       |    6.093|
+x<0>           |yReal<4>       |    5.978|
+x<0>           |yReal<5>       |    5.531|
+x<0>           |yReal<6>       |    5.576|
+x<0>           |yReal<7>       |    5.755|
+x<0>           |yReal<9>       |    6.087|
+x<0>           |yReal<10>      |    6.194|
+x<0>           |yReal<11>      |    5.963|
+x<1>           |yImag<3>       |    5.746|
+x<1>           |yImag<4>       |    6.220|
+x<1>           |yImag<5>       |    5.854|
+x<1>           |yImag<9>       |    5.746|
+x<1>           |yImag<10>      |    6.202|
+x<1>           |yImag<11>      |    6.183|
+x<1>           |yReal<0>       |    5.964|
+x<1>           |yReal<1>       |    5.564|
+x<1>           |yReal<2>       |    6.238|
+x<2>           |yReal<0>       |    5.829|
+x<2>           |yReal<1>       |    5.581|
+x<2>           |yReal<2>       |    6.074|
+x<2>           |yReal<3>       |    5.780|
+x<2>           |yReal<4>       |    6.229|
+x<2>           |yReal<5>       |    5.782|
+x<2>           |yReal<6>       |    5.263|
+x<2>           |yReal<7>       |    5.492|
+x<2>           |yReal<9>       |    5.774|
+x<2>           |yReal<10>      |    6.445|
+x<2>           |yReal<11>      |    6.214|
+x<3>           |yImag<3>       |    5.358|
+x<3>           |yImag<4>       |    6.502|
+x<3>           |yImag<5>       |    6.136|
+x<3>           |yImag<9>       |    5.358|
+x<3>           |yImag<10>      |    5.780|
+x<3>           |yImag<11>      |    5.761|
+x<3>           |yReal<0>       |    6.553|
+x<3>           |yReal<1>       |    6.107|
+x<3>           |yReal<2>       |    6.776|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Oct 30 01:26:30 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 346 MB
+
+
+

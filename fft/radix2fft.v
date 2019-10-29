@@ -25,7 +25,7 @@ module radix2fft(
     );
 	 
 	 wire [11:0] temp;
-	 
+	  
 	 
 	 //phase 1
 	 dftcalc A(x[0], x[2], temp[2:0], temp[5:3]);
@@ -40,7 +40,6 @@ module radix2fft(
 				assign yImag[8:6] = 0;
 				assign yReal[11:9] = temp[5:3];
 				assign yImag[11:9] = temp[11:9];
-			
 			
 endmodule
 

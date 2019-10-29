@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/ahish/Desktop/Assignment-6/fftradix4/radix4fft.xst" -ofn "/home/ahish/Desktop/Assignment-6/fftradix4/radix4fft.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 radix4fft.ngc radix4fft.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o radix4fft_map.ncd radix4fft.ngd radix4fft.pcf 
+par -w -intstyle ise -ol high -t 1 radix4fft_map.ncd radix4fft.ncd radix4fft.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml radix4fft.twx radix4fft.ncd -o radix4fft.twr radix4fft.pcf 
+xst -intstyle ise -ifn "/home/ahish/Desktop/Assignment-6/fftradix4/radix4fft.xst" -ofn "/home/ahish/Desktop/Assignment-6/fftradix4/radix4fft.syr" 
