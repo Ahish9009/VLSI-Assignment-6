@@ -25,7 +25,7 @@ static const char *ng0 = "/home/ahish/Desktop/Assignment-6/fft/radix2fft.v";
 
 
 
-static void Cont_86_0(char *t0)
+static void Cont_80_0(char *t0)
 {
     char t5[8];
     char *t1;
@@ -53,7 +53,7 @@ LAB0:    t1 = (t0 + 2680U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(86, ng0);
+LAB2:    xsi_set_current_line(80, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = (t0 + 1208U);
@@ -85,7 +85,7 @@ LAB2:    xsi_set_current_line(86, ng0);
 LAB1:    return;
 }
 
-static void Cont_87_1(char *t0)
+static void Cont_81_1(char *t0)
 {
     char t5[8];
     char *t1;
@@ -113,7 +113,7 @@ LAB0:    t1 = (t0 + 2928U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(87, ng0);
+LAB2:    xsi_set_current_line(81, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = (t0 + 1208U);
@@ -148,7 +148,7 @@ LAB1:    return;
 
 extern void work_m_10965453578058247936_0366219651_init()
 {
-	static char *pe[] = {(void *)Cont_86_0,(void *)Cont_87_1};
+	static char *pe[] = {(void *)Cont_80_0,(void *)Cont_81_1};
 	xsi_register_didat("work_m_10965453578058247936_0366219651", "isim/radix2ffttb_isim_beh.exe.sim/work/m_10965453578058247936_0366219651.didat");
 	xsi_register_executes(pe);
 }

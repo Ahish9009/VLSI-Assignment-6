@@ -179,3 +179,14 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 radix2fft.n
 map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o radix2fft_map.ncd radix2fft.ngd radix2fft.pcf 
 par -w -intstyle ise -ol high -t 1 radix2fft_map.ncd radix2fft.ncd radix2fft.pcf 
 trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml radix2fft.twx radix2fft.ncd -o radix2fft.twr radix2fft.pcf 
+xst -intstyle ise -ifn "/home/ahish/Desktop/Assignment-6/fft/radix2fft.xst" -ofn "/home/ahish/Desktop/Assignment-6/fft/radix2fft.syr" 
+xst -intstyle ise -ifn "/home/ahish/Desktop/Assignment-6/fft/radix2fft.xst" -ofn "/home/ahish/Desktop/Assignment-6/fft/radix2fft.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 radix2fft.ngc radix2fft.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o radix2fft_map.ncd radix2fft.ngd radix2fft.pcf 
+par -w -intstyle ise -ol high -t 1 radix2fft_map.ncd radix2fft.ncd radix2fft.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml radix2fft.twx radix2fft.ncd -o radix2fft.twr radix2fft.pcf 
+xst -intstyle ise -ifn "/home/ahish/Desktop/Assignment-6/fft/radix2fft.xst" -ofn "/home/ahish/Desktop/Assignment-6/fft/radix2fft.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 radix2fft.ngc radix2fft.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o radix2fft_map.ncd radix2fft.ngd radix2fft.pcf 
+par -w -intstyle ise -ol high -t 1 radix2fft_map.ncd radix2fft.ncd radix2fft.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml radix2fft.twx radix2fft.ncd -o radix2fft.twr radix2fft.pcf 

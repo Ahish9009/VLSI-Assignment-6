@@ -5,7 +5,7 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
@@ -140,8 +140,8 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <dftcalc>.
     Related source file is "radix2fft.v".
-    Found 1-bit adder carry out for signal <x1$addsub0000> created at line 79.
-    Found 3-bit subtractor for signal <x2$sub0000> created at line 80.
+    Found 2-bit subtractor for signal <x2>.
+    Found 1-bit adder carry out for signal <x1$addsub0000>.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 Unit <dftcalc> synthesized.
@@ -151,24 +151,19 @@ Synthesizing Unit <radix2fft>.
     Related source file is "radix2fft.v".
 WARNING:Xst:1306 - Output <yImag<5:4>> is never assigned.
 WARNING:Xst:1306 - Output <yImag<1:0>> is never assigned.
-WARNING:Xst:646 - Signal <t3<2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <t2<2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <t1<2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <t0<2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1872 - Variable <i> is used but never assigned.
     Register <yReal<6>> equivalent to <yReal<2>> has been removed
     Register <yReal<7>> equivalent to <yReal<3>> has been removed
     Found 1-bit register for signal <done>.
-    Found 8-bit register for signal <temp>.
     Found 2-bit register for signal <yImag<7:6>>.
     Found 2-bit register for signal <yImag<3:2>>.
     Found 6-bit register for signal <yReal<5:0>>.
-    Found 2-bit adder for signal <$add0000> created at line 54.
-    Found 2-bit adder for signal <$sub0000> created at line 56.
-    Found 2-bit subtractor for signal <$sub0001> created at line 57.
+    Found 2-bit adder for signal <$add0000> created at line 50.
+    Found 2-bit adder for signal <$sub0000> created at line 52.
+    Found 2-bit subtractor for signal <$sub0001> created at line 53.
     Found 3-bit up counter for signal <count>.
-    Found 3-bit adder for signal <old_count_1$add0000> created at line 62.
+    Found 3-bit adder for signal <old_count_1$add0000> created at line 58.
     Found 4-bit register for signal <storedx>.
+    Found 8-bit register for signal <temp>.
     Summary:
 	inferred   1 Counter(s).
 	inferred  23 D-type flip-flop(s).
@@ -183,9 +178,8 @@ Macro Statistics
 # Adders/Subtractors                                   : 8
  1-bit adder carry out                                 : 2
  2-bit adder                                           : 2
- 2-bit subtractor                                      : 1
+ 2-bit subtractor                                      : 3
  3-bit adder                                           : 1
- 3-bit subtractor                                      : 2
 # Counters                                             : 1
  3-bit up counter                                      : 1
 # Registers                                            : 20
@@ -206,9 +200,8 @@ Macro Statistics
 # Adders/Subtractors                                   : 8
  1-bit adder carry out                                 : 2
  2-bit adder                                           : 2
- 2-bit subtractor                                      : 1
+ 2-bit subtractor                                      : 3
  3-bit adder                                           : 1
- 3-bit subtractor                                      : 2
 # Counters                                             : 1
  3-bit up counter                                      : 1
 # Registers                                            : 23
@@ -222,12 +215,19 @@ Macro Statistics
 INFO:Xst:2261 - The FF/Latch <yImag_2> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <yImag_6> 
 
 Optimizing unit <radix2fft> ...
+INFO:Xst:2261 - The FF/Latch <temp_6> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_4> 
 INFO:Xst:2261 - The FF/Latch <yReal_0> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <yReal_4> 
+INFO:Xst:2261 - The FF/Latch <temp_2> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_0> 
+INFO:Xst:2261 - The FF/Latch <temp_6> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_4> 
 INFO:Xst:2261 - The FF/Latch <yReal_0> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <yReal_4> 
+INFO:Xst:2261 - The FF/Latch <temp_2> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_0> 
+INFO:Xst:2261 - The FF/Latch <temp_6> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_4> 
+INFO:Xst:2261 - The FF/Latch <temp_2> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_0> 
+INFO:Xst:2261 - The FF/Latch <temp_6> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_4> 
+INFO:Xst:2261 - The FF/Latch <temp_2> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <temp_0> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <yReal_0> in Unit <radix2fft> is equivalent to the following FF/Latch, which will be removed : <yReal_4> 
 Found area constraint ratio of 100 (+ 5) on block radix2fft, actual ratio is 0.
 
 Final Macro Processing ...
@@ -236,8 +236,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 24
- Flip-Flops                                            : 24
+# Registers                                            : 22
+ Flip-Flops                                            : 22
 
 =========================================================================
 
@@ -263,27 +263,25 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 30
+# IOs                              : 23
 
 Cell Usage :
-# BELS                             : 24
+# BELS                             : 18
 #      GND                         : 1
 #      INV                         : 1
-#      LUT2                        : 3
+#      LUT2                        : 9
 #      LUT3                        : 3
-#      LUT3_D                      : 2
-#      LUT3_L                      : 4
-#      LUT4                        : 10
-# FlipFlops/Latches                : 24
-#      FD                          : 8
+#      LUT4                        : 4
+# FlipFlops/Latches                : 22
 #      FDE                         : 12
 #      FDR                         : 3
+#      FDRE                        : 6
 #      FDSE                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 25
-#      IBUF                        : 4
-#      OBUF                        : 21
+# IO Buffers                       : 18
+#      IBUF                        : 5
+#      OBUF                        : 13
 =========================================================================
 
 Device utilization summary:
@@ -291,11 +289,11 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-5 
 
- Number of Slices:                       17  out of   4656     0%  
- Number of Slice Flip Flops:             24  out of   9312     0%  
- Number of 4 input LUTs:                 23  out of   9312     0%  
- Number of IOs:                          30
- Number of bonded IOBs:                  26  out of    232    11%  
+ Number of Slices:                       14  out of   4656     0%  
+ Number of Slice Flip Flops:             22  out of   9312     0%  
+ Number of 4 input LUTs:                 17  out of   9312     0%  
+ Number of IOs:                          23
+ Number of bonded IOBs:                  19  out of    232     8%  
  Number of GCLKs:                         1  out of     24     4%  
 
 ---------------------------
@@ -319,7 +317,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 24    |
+clk                                | BUFGP                  | 22    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -330,9 +328,9 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 3.683ns (Maximum Frequency: 271.525MHz)
-   Minimum input arrival time before clock: 1.731ns
-   Maximum output required time after clock: 4.221ns
+   Minimum period: 3.321ns (Maximum Frequency: 301.105MHz)
+   Minimum input arrival time before clock: 3.838ns
+   Maximum output required time after clock: 4.063ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -341,76 +339,77 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.683ns (frequency: 271.525MHz)
-  Total number of paths / destination ports: 121 / 36
+  Clock period: 3.321ns (frequency: 301.105MHz)
+  Total number of paths / destination ports: 121 / 46
 -------------------------------------------------------------------------
-Delay:               3.683ns (Levels of Logic = 1)
+Delay:               3.321ns (Levels of Logic = 1)
   Source:            count_2 (FF)
-  Destination:       done (FF)
+  Destination:       temp_5 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: count_2 to done
+  Data Path: count_2 to temp_5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             11   0.514   0.945  count_2 (count_2)
-     LUT3:I0->O           12   0.612   0.817  count_cmp_eq000011 (count_cmp_eq0000)
-     FDSE:S                    0.795          done
+     FDR:C->Q              5   0.514   0.607  count_2 (count_2)
+     LUT4:I1->O           11   0.612   0.793  storedx_or00001 (storedx_or0000)
+     FDRE:R                    0.795          temp_5
     ----------------------------------------
-    Total                      3.683ns (1.921ns logic, 1.762ns route)
-                                       (52.2% logic, 47.8% route)
+    Total                      3.321ns (1.921ns logic, 1.400ns route)
+                                       (57.8% logic, 42.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 4 / 4
+  Total number of paths / destination ports: 23 / 23
 -------------------------------------------------------------------------
-Offset:              1.731ns (Levels of Logic = 1)
-  Source:            x<0> (PAD)
-  Destination:       storedx_0 (FF)
+Offset:              3.838ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       temp_5 (FF)
   Destination Clock: clk rising
 
-  Data Path: x<0> to storedx_0
+  Data Path: rst to temp_5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.106   0.357  x_0_IBUF (x_0_IBUF)
-     FDE:D                     0.268          storedx_0
+     IBUF:I->O             2   1.106   0.532  rst_IBUF (rst_IBUF)
+     LUT4:I0->O           11   0.612   0.793  storedx_or00001 (storedx_or0000)
+     FDRE:R                    0.795          temp_5
     ----------------------------------------
-    Total                      1.731ns (1.374ns logic, 0.357ns route)
-                                       (79.4% logic, 20.6% route)
+    Total                      3.838ns (2.513ns logic, 1.325ns route)
+                                       (65.5% logic, 34.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 21 / 21
+  Total number of paths / destination ports: 13 / 13
 -------------------------------------------------------------------------
-Offset:              4.221ns (Levels of Logic = 1)
-  Source:            temp_4 (FF)
-  Destination:       temp<4> (PAD)
+Offset:              4.063ns (Levels of Logic = 1)
+  Source:            yReal_3 (FF)
+  Destination:       yReal<7> (PAD)
   Source Clock:      clk rising
 
-  Data Path: temp_4 to temp<4>
+  Data Path: yReal_3 to yReal<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               5   0.514   0.538  temp_4 (temp_4)
-     OBUF:I->O                 3.169          temp_4_OBUF (temp<4>)
+     FDE:C->Q              2   0.514   0.380  yReal_3 (yReal_3)
+     OBUF:I->O                 3.169          yReal_7_OBUF (yReal<7>)
     ----------------------------------------
-    Total                      4.221ns (3.683ns logic, 0.538ns route)
-                                       (87.3% logic, 12.7% route)
+    Total                      4.063ns (3.683ns logic, 0.380ns route)
+                                       (90.6% logic, 9.4% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.97 secs
+Total CPU time to Xst completion: 3.04 secs
  
 --> 
 
 
-Total memory usage is 518240 kilobytes
+Total memory usage is 518324 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 

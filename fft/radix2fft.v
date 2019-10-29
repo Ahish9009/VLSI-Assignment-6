@@ -19,44 +19,40 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module radix2fft(
-	 input clk, 
+	 input clk, rst, 
     input [3:0] x,
-	 output reg [7:0] temp,
-	 output reg [7:0] yReal = 8'b00000000,
-	 output reg [7:0] yImag = 8'b00000000,
+	 output reg [11:0] yReal = 8'b00000000,
+	 output reg [11:0] yImag = 8'b00000000,
 	 output reg done
     );
 	 
-	 integer i;
 	 reg [2:0] count = 0;
 	 reg [3:0] storedx;
+	 reg [11:0] temp;
 	 wire [2:0] t0, t1, t2, t3;
 	 dftcalc A(storedx[0], storedx[2], t0, t1);
 	 dftcalc B(storedx[1], storedx[3], t2, t3);
 	 
-		
 	 always @ (posedge clk) begin
 		
-			if (count == 0) begin
+			if (count == 0 | rst) begin
 				storedx <= x;
 				temp <= 0;
 				done <= 0;
 			end 
 			else if (count == 1) begin
-				
-				temp[1:0] <= t0;
-				temp[3:2] <= t1;
-				temp[5:4] <= t2;
-				temp[7:6] <= t3;
+				temp[2:0] <= t0;
+				temp[5:3] <= t1;
+				temp[8:6] <= t2;
+				temp[11:9] <= t3;
 			end
 			else if (count == 2) begin
-			
-				yReal[1:0] <= temp[1:0] + temp[5:4];
-				yReal[3:2] <= temp[3:2];
-				yImag[3:2] <= -temp[7:6];
-				yReal[5:4] <= temp[1:0] - temp[5:4];
-				yReal[7:6] <= temp[3:2];
-				yImag[7:6] <= temp[7:6];
+				yReal[2:0] <= temp[2:0] + temp[8:6];
+				yReal[5:3] <= temp[5:3];
+				yImag[5:3] <= -temp[11:9];
+				yReal[8:6] <= temp[2:0] - temp[8:6];
+				yReal[11:9] <= temp[5:3];
+				yImag[11:9] <= temp[11:9];
 			end
 			
 			count = count + 1;
@@ -64,7 +60,6 @@ module radix2fft(
 				done <= 1;
 				count = 0;
 			end
-		
 		end
 			
 endmodule

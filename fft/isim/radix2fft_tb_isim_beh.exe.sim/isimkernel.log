@@ -1,0 +1,29 @@
+Command line:
+   radix2fft_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  57739
+
+Tue Oct 29 23:34:39 2019
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 181.51 Meg
+
+ Total Signals          : 31
+ Total Nets             : 60
+ Total Signal Drivers   : 19
+ Total Blocks           : 5
+ Total Primitive Blocks : 3
+ Total Processes        : 27
+ Total Traceable Variables  : 27
+ Total Scalar Nets and Variables : 190
+Total Line Count : 49
+
+ Total Simulation Time: 0.01 sec
+
+ Current Memory Usage: 257.012 Meg
+
+Tue Oct 29 23:36:10 2019
+
