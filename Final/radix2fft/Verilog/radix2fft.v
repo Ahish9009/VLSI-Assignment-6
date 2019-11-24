@@ -32,14 +32,14 @@ module radix2fft(
 	 dftcalc B(x[1], x[3], temp[8:6], temp[11:9]);
 	 
 	 //phase 2
-				assign yReal[2:0] = temp[2:0] + temp[8:6];
-				assign yImag[2:0] = 0;
-				assign yReal[5:3] = temp[5:3];
-				assign yImag[5:3] = -temp[11:9];
-				assign yReal[8:6] = temp[2:0] - temp[8:6];
-				assign yImag[8:6] = 0;
-				assign yReal[11:9] = temp[5:3];
-				assign yImag[11:9] = temp[11:9];
+	assign yReal[2:0] = temp[2:0] + temp[8:6];
+	assign yImag[2:0] = 0;
+	assign yReal[5:3] = temp[5:3];
+	assign yImag[5:3] = -temp[11:9];
+	assign yReal[8:6] = temp[2:0] - temp[8:6];
+	assign yImag[8:6] = 0;
+	assign yReal[11:9] = temp[5:3];
+	assign yImag[11:9] = temp[11:9];
 			
 endmodule
 
